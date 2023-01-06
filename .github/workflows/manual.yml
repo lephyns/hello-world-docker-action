@@ -1,5 +1,3 @@
-# This is a basic workflow that is manually triggered
- 
 name: My workflow
  
 on: [push]
@@ -14,6 +12,6 @@ jobs:
         uses: actions/hello-world-docker-action@v1
         with:
           who-to-greet: Rafael Rabelo da Silva
-      # Use the output from the `hello` step
+          
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
