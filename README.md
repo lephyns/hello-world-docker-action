@@ -49,3 +49,6 @@ git add action.yml entrypoint.sh Dockerfile README.md
 git commit -m "My first action is ready"
 git tag -a -m "My first action release" v1
 git push --follow-tags
+
+
+O código de fluxo de trabalho a seguir usa a ação hello world concluída no repositório public actions/hello-world-docker-action. Clique em “Actions” e depois em “Configure” no item Manual Workflow (Automation items). Copie o código de exemplo de fluxo de trabalho a seguir em um arquivo .github/workflows/main.yml, mas substitua actions/hello-world-docker-action pelo seu repositório e nome da ação. 

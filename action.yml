@@ -1,10 +1,9 @@
-YAML
 # action.yml
 name: 'Hello World'
 description: Vamos começar a configuração
 inputs:
   who-to-greet:  # id of input
-    description: 'Who to greet'
+    description: 'Rafael Rabelo da Silva'
     required: true
     default: 'World'
 outputs:
