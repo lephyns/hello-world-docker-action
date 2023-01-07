@@ -1,11 +1,11 @@
-# O projeto
+# O projeto 📚
 
 Este projeto Docker imprime a frase "Hello" + o nome de uma pessoa para saudar no log e exibe o momento exato que a saudação foi realizada.<br>
 Abaixo print do job:
 
 ![img](./img/hello-world-docker-action.png "Exibindo projeto")
 
-# Os arquivos
+# Os arquivos ⚙️
 
 * Criado arquivo `Dockerfile` onde foi declarado os recursos necessários para que a aplicação rodasse corretamente (container, imagem e localização do código).
 * Criado arquivo `action.yml` de metadados de ação os quais definem um **parâmetro de entrada** who-to-greet (quem cumprimentar) e um **parâmetro de saída** time (hora) que refere-se ao momento exato que a saudação foi realizada. 
@@ -13,7 +13,7 @@ Abaixo print do job:
 Para que o GitHub pudesse reconhecer as variáveis de saída, foi necessário usar um comando de fluxo de trabalho em uma sintaxe específica:<br>
     `echo "::set-output name=<output name>::<value>"`
 
-# Dicas
+# Dicas 💡
 
 * Para que o arquivo ` entrypoint.sh` se tornasse executável é necessário utilizar o comando abaixo no terminal:<br>
     `chmod +x entrypoint.sh`
