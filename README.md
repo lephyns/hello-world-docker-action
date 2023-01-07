@@ -1,54 +1,26 @@
-# hello-world-docker-action
+# O projeto
 
+Este projeto Docker imprime a frase "Hello" + o nome de uma pessoa para saudar no log e exibe o momento exato que a saudação foi realizada.<br>
+Abaixo print do job:
 
-$ chmod +x entrypoint.sh
+![img](./img/hello-world-docker-action.png "Exibindo projeto")
 
+# Os arquivos
 
-Em seu diretório hello-world-docker-action, crie um arquivo README.md que especifique as seguintes informações:
+* Criado arquivo `Dockerfile` onde foi declarado os recursos necessários para que a aplicação rodasse corretamente (container, imagem e localização do código).
+* Criado arquivo `action.yml` de metadados de ação os quais definem um **parâmetro de entrada** who-to-greet (quem cumprimentar) e um **parâmetro de saída** time (hora) que refere-se ao momento exato que a saudação foi realizada. 
+* Criado arquivo `entrypoint.sh` (shell) que usa a variável de entrada `who-to-greet` para imprimir `Hello [who-to-greet]` no arquivo de log. Este mesmo script obtém a hora e define a mesma como variável de saída a qual poderá ser usada posteriormente para as ações executadas.<br>
+Para que o GitHub pudesse reconhecer as variáveis de saída, foi necessário usar um comando de fluxo de trabalho em uma sintaxe específica:<br>
 
-• Uma descrição detalhada do que a ação faz.
+`echo "::set-output name=<output name>::<value>"`.
 
-• Argumentos de entrada e saída necessários.
+# Dicas
 
-• Argumentos de entrada e saída opcionais.
+* Para que o arquivo ` entrypoint.sh` se tornasse executável é necessário utilizar o comando abaixo no terminal:<br>
 
-• Segredos que a ação usa.
+`chmod +x entrypoint.sh`
 
-• Variáveis de ambiente que a ação usa.
+* Se você quiser adicionar uma tag de versão a cada commit realizado basta digitar o comando abaixo no terminal:<br>
 
-• Um exemplo de como usar sua ação em um fluxo de trabalho.
-
-README.md
-# Ação do docker “Hello World”
-
-Esta ação imprime "Hello World" ou "Hello" + o nome de uma pessoa para saudar no log.
-
-## Entradas / Inputs
-
-## `quem cumprimentar`
-
-**Obrigatório** O nome da pessoa a ser cumprimentada. Padrão `"Mundo"`.
-
-## Saídas
-
-## `hora`
-
-A hora em que te cumprimentamos.
-
-## Exemplo de uso
-
-uses: actions/hello-world-docker-action@v1
-with:
-   who-to-greet: Carlos Oliveira
-
-
-É uma prática recomendada adicionar também uma tag de versão para lançamentos de sua ação.
-
-Shell
-git add action.yml entrypoint.sh Dockerfile README.md
-git commit -m "My first action is ready"
-git tag -a -m "My first action release" v1
-git push --follow-tags
-
-
-O código de fluxo de trabalho a seguir usa a ação hello world concluída no repositório public actions/hello-world-docker-action. Clique em “Actions” e depois em “Configure” no item Manual Workflow (Automation items). Copie o código de exemplo de fluxo de trabalho a seguir em um arquivo .github/workflows/main.yml, mas substitua actions/hello-world-docker-action pelo seu repositório e nome da ação. 
+`git tag -a -m "My first action release" v1`
+`git push --follow-tags`
