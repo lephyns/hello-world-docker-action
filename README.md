@@ -19,5 +19,5 @@ Para que o GitHub pudesse reconhecer as variáveis de saída, foi necessário us
     `chmod +x entrypoint.sh`
 
 * Se você quiser adicionar uma tag de versão a cada commit realizado basta digitar o comando abaixo no terminal:<br>
-    `git tag -a -m "My first action release" v1`
+    `git tag -a -m "My first action release" v1`<br>
     `git push --follow-tags`
